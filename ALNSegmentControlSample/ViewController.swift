@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         let screenWidth = UIScreen.mainScreen().bounds.size.width
         let xMargin: CGFloat = 30.0
         
-        let segmentControl = ALNSegmentControl(frame: CGRectMake(xMargin, 100, screenWidth - 2 * xMargin, 100))
+        let segmentControl = ALNSegmentControl(frame: CGRectMake(xMargin, 100, screenWidth - 2 * xMargin, 40))
         segmentControl.titles = ["Objc","Swift","Apple","Google"]
         segmentControl.buttonClickedBlock = {(tag) in
             

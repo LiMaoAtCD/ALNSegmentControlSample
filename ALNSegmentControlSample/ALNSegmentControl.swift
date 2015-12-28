@@ -114,7 +114,7 @@ class ALNSegmentControl: UIView {
             self!.highlightView?.frame = frame
             self!.highlightTopView?.frame = changedFrame
             }) { (_) -> Void in
-//                sel
+                self.shakeAnimationOnView(self.highlightColorView!)
         }
     }
     
@@ -122,11 +122,12 @@ class ALNSegmentControl: UIView {
     
     
     //Mark: createLabel both background label & highlightLabel
+    
     func createLabelByTitleIndex(index: Int, textColor: UIColor) -> UILabel {
         let currentLabelFrame = CGRectMake(labelWidth * CGFloat(index), 0, labelWidth, viewHeight)
         let label = UILabel(frame: currentLabelFrame)
         label.textColor = textColor
-        label.text = self.titles![index]
+        label.text = self.titles[index]
         label.font = titlesFont
         label.minimumScaleFactor = 0.1
         label.textAlignment = NSTextAlignment.Center
@@ -138,6 +139,21 @@ class ALNSegmentControl: UIView {
         return CGRectMake(labelWidth * CGFloat(index), 0, labelWidth, viewHeight)
     }
     
+    func shakeAnimationOnView(view: UIView) {
+        let layer = view.layer
+        let position = layer.position
+        let pointA = CGPointMake(position.x + 1, position.y);
+        let pointB = CGPointMake(position.x - 1, position.y);
+        let animation = CAKeyframeAnimation(keyPath: "position")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+        animation.values = [NSValue(CGPoint: pointA), NSValue(CGPoint: pointB)]
+        animation.autoreverses = true
+        animation.duration = 0.1
+        animation.repeatCount = 1
+        layer.addAnimation(animation, forKey: "shakeAnimation")
+        
+        
+    }
     
 
 }
