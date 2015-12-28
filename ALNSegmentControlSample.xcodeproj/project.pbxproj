@@ -12,6 +12,7 @@
 		87F206851C30E546005B198C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F206831C30E546005B198C /* Main.storyboard */; };
 		87F206871C30E546005B198C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F206861C30E546005B198C /* Assets.xcassets */; };
 		87F2068A1C30E546005B198C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F206881C30E546005B198C /* LaunchScreen.storyboard */; };
+		87F206921C30E564005B198C /* ALNSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F206911C30E564005B198C /* ALNSegmentControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		87F206861C30E546005B198C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87F206891C30E546005B198C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87F2068B1C30E546005B198C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87F206911C30E564005B198C /* ALNSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALNSegmentControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				87F2067F1C30E546005B198C /* AppDelegate.swift */,
 				87F206811C30E546005B198C /* ViewController.swift */,
+				87F206911C30E564005B198C /* ALNSegmentControl.swift */,
 				87F206831C30E546005B198C /* Main.storyboard */,
 				87F206861C30E546005B198C /* Assets.xcassets */,
 				87F206881C30E546005B198C /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				87F206821C30E546005B198C /* ViewController.swift in Sources */,
 				87F206801C30E546005B198C /* AppDelegate.swift in Sources */,
+				87F206921C30E564005B198C /* ALNSegmentControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

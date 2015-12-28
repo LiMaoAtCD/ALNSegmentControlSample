@@ -13,6 +13,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let screenWidth = UIScreen.mainScreen().bounds.size.width
+        let xMargin: CGFloat = 30.0
+        
+        let segmentControl = ALNSegmentControl(frame: CGRectMake(xMargin, 100, screenWidth - 2 * xMargin, 100))
+        segmentControl.titles = ["Objc","Swift","Apple","Google"]
+        segmentControl.buttonClickedBlock = {(tag) in
+            
+            print("tag\(tag)")
+        }
+        
+        self.view.addSubview(segmentControl)
     }
 
     override func didReceiveMemoryWarning() {
