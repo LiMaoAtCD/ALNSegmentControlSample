@@ -11,7 +11,7 @@ typealias ButtonClickedBlock = (tag: Int) -> Void
 
 class ALNSegmentControl: UIView {
     
-    var titles: [String]!
+    var titles: [String]! = ["A","B"]
     var titleNormalColor: UIColor = UIColor.blackColor()
     var titleHighlightColor: UIColor = UIColor.whiteColor()
     var highlightBackgroundColor: UIColor = UIColor.redColor()
@@ -35,30 +35,43 @@ class ALNSegmentControl: UIView {
     }()
     
     var buttonClickedBlock: ButtonClickedBlock?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+
+    init(frame: CGRect ,titles: [String]?) {
+        
         self.viewWidth = frame.size.width
         self.viewHeight = frame.size.height
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-//        return self.init(coder: aDecoder)
-    }
-    
-    
-    override func layoutSubviews() {
-
-        guard let _ = titles else{
-            assert(titles != nil, "titles can't be nil")
-            return
-        }
+        super.init(frame: frame)
         
+        if let title = titles {
+            self.titles = title
+        }
+        configureSegmentControl()
+    }
+    
+    func configureSegmentControl() {
         createBottomLabels()
         createTopLabels()
         createTopButtons()
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    init(frame: CGRect ,titles: [String]?,withButtonClickedBlock buttonClickedBlock: ButtonClickedBlock) {
+        
+        self.viewWidth = frame.size.width
+        self.viewHeight = frame.size.height
+        super.init(frame: frame)
+        
+        if let title = titles {
+            self.titles = title
+        }
+        configureSegmentControl()
+        
+        self.buttonClickedBlock = buttonClickedBlock
+    }
+  
     
     func createBottomLabels() {
     
